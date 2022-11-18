@@ -19,7 +19,7 @@ const sourceId = '37737907';
     
   }*/
 
-
+/*
 useEffect(()=> {
   api.get(`/v2/${token}/coupon/_stores?sourceId=${sourceId}` )
   .then((response) => {
@@ -31,23 +31,33 @@ useEffect(()=> {
   
 },[])
 
+*/
 
-/*
 useEffect(() => {
   fetch(`http://sandbox-api.lomadee.com/v2/${token}/coupon/_categories?sourceId=${sourceId}`, {
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      'Access-Control-Allow-Origin': 'http://localhost:3000'
+    }
   })
   .then((response) => response.json())
   .then((json) => {
-    setCategories(json)
+    setStores(json)
   })
   .catch((error) => console.log)
 }, [])
 
-*/
+
   return(
     <div>
-        {stores?.stores?.id}
+        {stores.map((item) => {
+          const {categories} = item;
+          return (
+            <div>
+              {categories}
+            </div>
+          )
+        })}
     </div>   
   )
 }

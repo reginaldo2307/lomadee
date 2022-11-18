@@ -18,7 +18,7 @@ const sourceId = '37737907';
     
   }*/
 
-  api.get(`/${token}/offer/_bestsellers`)
+  api.get(`/${token}/offer/_bestsellers?sourceId=${sourceId}` )
     .then((response) => setList(response.data))
     .catch((err) => {
       console.error("Não foi possível carregar" + err);
@@ -28,7 +28,7 @@ const sourceId = '37737907';
   return(
     <div>
       
-      {list.length}
+      Quantidade: {list.length}
     </div>
   )
 }

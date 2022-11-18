@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const request = axios.create({
-    baseURL: 'http://sandbox-api.lomadee.com/v3'
-})
-
-export const api = () => ({
-    getoffers: async () => {
-        
+const api = axios.create({
+    baseURL: 'http://sandbox-api.lomadee.com/v1',
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     }
-})
+});
+
+
+export default api;

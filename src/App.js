@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import api from './service/api'
+import './App.css'
 
 const App = () => {
 
-  const [list, setList] = useState([]);
+  const [stores, setStores] = useState([]);
 /*
   useEffect(()=> {
     
@@ -18,18 +19,36 @@ const sourceId = '37737907';
     
   }*/
 
-  api.get(`/${token}/offer/_bestsellers?sourceId=${sourceId}` )
-    .then((response) => setList(response.data))
-    .catch((err) => {
-      console.error("Não foi possível carregar" + err);
-    });
+
+useEffect(()=> {
+  api.get(`/v2/${token}/coupon/_stores?sourceId=${sourceId}` )
+  .then((response) => {
+    setStores(response.stores)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  
+},[])
 
 
+/*
+useEffect(() => {
+  fetch(`http://sandbox-api.lomadee.com/v2/${token}/coupon/_categories?sourceId=${sourceId}`, {
+    method: 'GET'
+  })
+  .then((response) => response.json())
+  .then((json) => {
+    setCategories(json)
+  })
+  .catch((error) => console.log)
+}, [])
+
+*/
   return(
     <div>
-      
-      Quantidade: {list.length}
-    </div>
+        {stores?.stores?.id}
+    </div>   
   )
 }
 

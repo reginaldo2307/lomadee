@@ -1,0 +1,26 @@
+.ofertas {
+    display: grid;
+    padding: 25px;
+}
+
+.cupom-ofertas {
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-ofertas {
+    background-color: #f5f5f5;
+    margin: auto;
+    display: flex;
+    width: 380px;
+    height: 180px;
+    padding: 15px;
+    border-radius: 10px;
+    color: #777;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,14 @@
+*{
+    padding: 5px;
+}
+.home {
+    width: 100%;
+}
+.cupom-loja{
+    width: 100%;
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: repeat(8, 125px);
+    gap: 35px;
+    justify-content: center;
+}

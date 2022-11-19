@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import api from './service/api'
-import './App.css'
+import Header from '../../components/Header';
+import api from '../../service/api'
+import './index.css'
 
 const CupomLojas = () => {
 
@@ -51,6 +52,7 @@ useEffect(() => {
 */
   return(
     <div className='home' >
+      <Header/>
       <h2>Cupom por Loja</h2>
       <div className='cupom-loja' >
         {stores?.stores?.map((store, index) => {

@@ -1,7 +1,8 @@
 .ofertas {
-    display: grid;
-    padding: 25px;
+    width: 100%;
 }
+
+
 
 .cupom-ofertas {
     display: grid;
@@ -22,5 +23,6 @@
     padding: 15px;
     border-radius: 10px;
     color: #777;
+    font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

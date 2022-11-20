@@ -57,12 +57,9 @@ useEffect(() => {
       <div className='cupom-loja' >
         {stores?.stores?.map((store, index) => {
           return (
-            <div key={index}>
-              <span>
-                {store.name}
-              </span>
+            <div className='cupom-item' key={index}>
               <a href={store.link} target='_blank'>
-                <img src={store.image} alt='Imagem' width={75} />
+                <img src={store.image} alt='Imagem' width={125} />
               </a>
             </div>
           )

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import './index.css'
 import api from '../../service/api'
 import { Link } from "react-router-dom";
+import Header from "../../components/Header";
 
 const Coupon = () => {
 
@@ -24,6 +25,7 @@ const Coupon = () => {
 
     return (
     <div className='ofertas' >
+        <Header/>
       <h2>Show de cupons</h2>
       <div className='cupom-ofertas' >
         {coupons?.coupons?.map((coupon, index) => {

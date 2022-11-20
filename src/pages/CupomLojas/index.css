@@ -7,8 +7,15 @@
 .cupom-loja{
     width: 100%;
     display: grid;
-    background-color: aqua;
-    grid-template-columns: repeat(8, 125px);
-    gap: 35px;
+    grid-template-columns: repeat(6, 175px);
+    gap: 10px;
     justify-content: center;
+}
+
+.cupom-item {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }

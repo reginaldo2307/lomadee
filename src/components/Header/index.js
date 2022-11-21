@@ -4,6 +4,10 @@ import Logo from '../../assets/images/logo.png'
 
 const Header = () => {
 
+  const handleRegister = () => {
+    alert('Clicou')
+  }
+
   return (
   <div className="header">
     <div className="logo">
@@ -21,6 +25,7 @@ const Header = () => {
           <li ><a href={'/lojas'}>Lojas</a></li>
           <li><a href={'/categorias'}>Categorias</a></li>
           <li><a href="">Black Friday</a></li>
+          <button className="register" onClick={handleRegister}>Entrar</button>
         </ul>
       </div>
     </div>

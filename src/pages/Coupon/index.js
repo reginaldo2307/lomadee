@@ -31,7 +31,7 @@ const Coupon = () => {
         {coupons?.coupons?.map((coupon, index) => {
             return (
                 <div className="card-ofertas" key={index}>
-                    <img src={coupon.store.image} alt='Imagem' width={125} style={{padding: '5px 15px', borderRadius: '15px'}} />
+                    <img src={coupon.store.image} alt='Imagem' width={95} style={{padding: '5px', borderRadius: '15px'}} />
                     <div style={{display: 'flex', flexDirection: 'column'}} >
                         <span>
                             {coupon.description}
@@ -40,7 +40,7 @@ const Coupon = () => {
                            Código: {coupon.code}
                         </span>
                         <Link to={coupon.link}>
-                        <button style={{position: 'relative', cursor: 'pointer', border: '0', borderRadius: '2px', outline: '0', bottom: '-10px', padding: '10px', backgroundColor: '#E0C9CB'}} >PEGAR CUPON</button>
+                        <button style={{position: 'relative', cursor: 'pointer', border: '0', borderRadius: '2px', outline: '0', bottom: '0', padding: '10px', backgroundColor: '#E0C9CB'}} >PEGAR CUPON</button>
                         </Link>
                     </div>
                 </div>

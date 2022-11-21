@@ -39,11 +39,21 @@ ul{
 }
 
 li {
-    padding: 10px 20px;
+    padding: 5px 12px;
     border-radius: 5px;
     color: #777;
     font-size: 17px;
     font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button.register{
+    background-color: black;
+    color: #fff;
+    padding: 5px 25px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

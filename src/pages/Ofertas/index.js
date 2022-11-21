@@ -9,7 +9,7 @@ const Ofertas = () => {
     const [ofertas, setOfertas] = useState({});
 
     useEffect(()=> {
-        api.get(`/v3/${token}/offer/_category/2?sourceId=${sourceId}` )
+        api.get(`/v3/${token}/offer/_all?sourceId=${sourceId}` )
         .then((response) => {
           setOfertas(response.data)
         })
@@ -31,7 +31,7 @@ const Ofertas = () => {
         {ofertas?.offers?.map((oferta, index) => {
             return (
                 <div className="card-ofertas" key={index}>
-                    <img src={oferta.thumbnail} alt='Imagem' width={125} style={{padding: '5px 15px', borderRadius: '15px'}} />
+                    <img src={oferta.thumbnail} alt='Imagem' width={135} style={{padding: '1px', borderRadius: '10px'}} />
                     <div style={{display: 'flex', flexDirection: 'column'}} >
                         <span>
                             {oferta.name}

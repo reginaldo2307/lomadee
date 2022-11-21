@@ -9,7 +9,7 @@ const Ofertas = () => {
     const [ofertas, setOfertas] = useState({});
 
     useEffect(()=> {
-        api.get(`/v3/${token}/offer/_bestsellers?sourceId=${sourceId}` )
+        api.get(`/v3/${token}/offer/_category/2?sourceId=${sourceId}` )
         .then((response) => {
           setOfertas(response.data)
         })

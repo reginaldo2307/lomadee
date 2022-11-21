@@ -7,7 +7,9 @@ const Header = () => {
   return (
   <div className="header">
     <div className="logo">
-      <img src={Logo} alt='logo' width={150} />
+      <a href={'/'}>
+        <h2>CupomAqui</h2>
+      </a>
     </div>
     <div className="search-offers">
       <input type="search"/>

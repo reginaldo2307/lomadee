@@ -6,11 +6,16 @@
 }
 
 .logo {
-    width: 18%;
+    width: 15%;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #7a7a7a;
 }
 
 .search-offers {
-    width: 45%;
+    width: 40%;
 }
 
 input[type=search] {
@@ -25,7 +30,7 @@ input[type=search] {
 }
 
 .botoes-header {
-    width: 37%;
+    width: 45%;
 }
 
 ul{
@@ -44,6 +49,7 @@ li {
 
 li a {
     text-decoration: none;
+    color: #7a7a7a;
 }
 
 li:hover {

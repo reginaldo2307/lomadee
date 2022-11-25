@@ -1,24 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './index.css';
 import Logo from '../../assets/images/logo.png'
+import { useNavigate } from "react-router-dom";
+import api from '../../service/api'
 
 const Header = () => {
 
+  const navigate = useNavigate();
+
+  const [search, setSearch] = useState('');
+
+
+  useEffect(() => {
+    api.get(`/v3/${token}/offer/_search?sourceId=${sourceId}&keyword=${setSearch}`)
+      .then((response) => {
+        setSearch(response.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }, [])
+
+  const token = '166874105037989c21cb9';
+  const sourceId = '37737907';
+
   const handleRegister = () => {
-    alert('Clicou')
+    navigate('/cadastro');
   }
 
   return (
   <div className="header">
     <div className="logo">
       <a href={'/'}>
-        <h2>CupomAqui</h2>
+        <h2>CuponMania</h2>
       </a>
     </div>
     <div className="search-offers">
-      <input type="search"/>
+      <input 
+        type="search"
+        onChange={e => setSearch(e.target.value)}
+        placeholder="Pesquise por ofertas"
+        value={search}
+      />
     </div>
-    
     <div className="botoes-header">
       <div className="menu">
         <ul >
@@ -29,7 +53,17 @@ const Header = () => {
         </ul>
       </div>
     </div>
-    
+    {search?.offers?.filter((offer) => {
+      if (search === '') {
+        return offer;
+      } else if (offer.name.toLowerCase().includes(offer.toLowerCase())) {
+        return offer;
+      }
+    }).map((offer, index) => {
+      <div key={index}>
+        <span>{offer.name}</span>
+      </div>
+    })}
   </div>
   )
 }

@@ -3,6 +3,7 @@ import { Route, Router, Routes } from 'react-router-dom';
 import CupomLojas from './pages/CupomLojas';
 import Coupon from './pages/Coupon';
 import Ofertas from './pages/Ofertas';
+import Register from './pages/register';
 import CouponCategory from './pages/CouponsCategory';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Route path='/lojas' element={<CupomLojas/>}/>
       <Route path='/cupons' element={<Coupon/>}/>
       <Route path='/categorias' element={<CouponCategory/>}/>
+      <Route path='/cadastro' element={<Register/>}/>
     </Routes>
   )
 }

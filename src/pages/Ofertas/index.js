@@ -9,7 +9,8 @@ const Ofertas = () => {
     const [ofertas, setOfertas] = useState({});
     const [valor, setValor] = useState('');
     const [pageCount, setPagecount] = useState(0);
-    const [totalPage, setTotalpage] = useState()
+    const [totalPage, setTotalpage] = useState();
+    const [category, setCategory] = useState();
 
 
 
@@ -23,6 +24,17 @@ const Ofertas = () => {
         })
         
     },[])
+
+    useEffect(()=> {
+      api.get(`/v3/${token}/offer/_category/6424?sourceId=${sourceId}` )
+      .then((response) => {
+        setCategory(response.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      
+  },[])
 
    
 
@@ -65,8 +77,25 @@ const Ofertas = () => {
             )
         })}
       </div>
-      {ofertas?.pagination?.page}
-    </div> 
+      <h2>Notebook</h2>
+      <div className='cupom-ofertas' >
+        {category?.offers?.map((categorie, index) => {
+          return (
+            <div className="card-ofertas" key={index}>
+              <img src={categorie.thumbnail} alt='Imagem' width={135} style={{padding: '1px', borderRadius: '10px'}} />
+              <div style={{display: 'flex', flexDirection: 'column'}} >
+                <span>
+                  {categorie.name}
+                </span>
+                  {categorie.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+                <Link to={categorie.link}>
+                  <button style={{position: 'relative', cursor: 'pointer', border: '0', borderRadius: '2px', outline: '0', bottom: '-10px', padding: '10px', backgroundColor: '#E0C9CB'}} >IR PARA LOJA</button>
+                </Link>
+              </div>
+            </div>
+          )})}
+          </div>
+      </div> 
     )
 }
 

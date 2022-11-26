@@ -12,7 +12,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    api.get(`/v3/${token}/offer/_search?sourceId=${sourceId}&keyword=${setSearch}`)
+    api.get(`/v3/${token}/offer/_search?sourceId=${sourceId}&keyword=${search}`)
       .then((response) => {
         setSearch(response.data)
       })
@@ -40,7 +40,6 @@ const Header = () => {
         type="search"
         onChange={e => setSearch(e.target.value)}
         placeholder="Pesquise por ofertas"
-        value={search}
       />
     </div>
     <div className="botoes-header">

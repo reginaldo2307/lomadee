@@ -15,7 +15,7 @@ const Ofertas = () => {
 
 
     useEffect(()=> {
-        api.get(`/v3/${token}/offer/_all?sourceId=${sourceId}` )
+        api.get(`/v2/${token}/offer/_all?sourceId=${sourceId}` )
         .then((response) => {
           setOfertas(response.data)
         })
@@ -26,7 +26,7 @@ const Ofertas = () => {
     },[])
 
     useEffect(()=> {
-      api.get(`/v3/${token}/offer/_category/6424?sourceId=${sourceId}` )
+      api.get(`/v2/${token}/offer/_category/6424?sourceId=${sourceId}` )
       .then((response) => {
         setCategory(response.data)
       })
